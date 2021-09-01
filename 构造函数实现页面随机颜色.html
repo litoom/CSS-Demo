@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  Lorem ipsum dolor
+  <script>
+    function Color(elem) {
+      this.elem = elem;
+      this.colors = ['red', 'blue', 'green', 'pink'];
+      this.run = function () {
+        // console.log(this);
+        setInterval(function () {
+          // 如果不加bind(this),此处的this是window
+          // console.log(this);
+          let i = Math.floor(Math.random() * this.colors.length);
+          this.elem.style.backgroundColor = this.colors[i];
+        }.bind(this), 1000);
+      }
+    }
+    
+    let obj = new Color(document.body);
+
+    obj.run();
+  </script>
+</body>
+
+</html>
