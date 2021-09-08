@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0a2a43;
+    min-height: 2000px;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #0a2a43, transparent);
+    z-index: 1000;
+}
+
+section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0d2c41;
+    /* 颜色和父容器背景混合 */
+    mix-blend-mode: color;
+    z-index: 1000;
+}
+
+section img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+#road {
+    z-index: 200;
+}
+
+#text {
+    position: relative;
+    color: #fff;
+    font-size: 15em;
+    z-index: 100;
+}
+p{
+    color: #fff;
+    font-size: 5em;
+    word-break: break-all;
+}

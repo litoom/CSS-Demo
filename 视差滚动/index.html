@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <img src="./img/bg.jpg" id="bg">
+        <img src="./img/moon.png" id="moon">
+        <img src="./img/mountain.png" id="mountain">
+        <img src="./img/road.png" id="road">
+        <h2 id="text">视差滚动</h2>
+        
+    </section>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut et sapiente, quaerat, quisquam laudantium optio asperiores pariatur exercitationem illum veritatis at, id assumenda labore? Neque aut nesciunt amet quas architecto?
+    </p>
+    <script>
+        let bg = document.querySelector("#bg");
+        let moon = document.querySelector("#moon");
+        let mountain = document.querySelector("#mountain");
+        let road = document.querySelector("#road");
+        let text = document.querySelector("#text");
+        window.addEventListener("scroll",function(){
+            let value = window.scrollY;
+            
+            bg.style.top = value*0.5 + "px";
+            // console.log(bg.style.top,value);
+            moon.style.left  = -value*0.5 + "px";
+            mountain.style.top = -value*0.2 + "px";
+            road.style.top = value*0.2 + "px";
+            text.style.top = value + "px";
+        });
+    </script>
+</body>
+</html>

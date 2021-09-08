@@ -1,0 +1,5 @@
+{
+    "emmet.includeLanguages": {
+        "\"editor.formatOnSave\"": "\"true\""
+    }
+}
